@@ -11,5 +11,27 @@
     <span>Angular Starter project</span>
   </md-toolbar>
 
+  <div class="sp-container">
+    <md-card>
+      <md-card-title>Add a Speaker</md-card-title>
+      <md-card-content>
+        <form class="sp-form">
+          <div>
+            <md-input placeholder="First Name"></md-input>
+            <md-input placeholder="Last Name"></md-input>
+          </div>
+          <div>
+            <md-checkbox indeterminate="true">Tech Talk</md-checkbox>
+            <md-checkbox indeterminate="true">Code Labs</md-checkbox>
+          </div>
+        </form>
+        <div>
+          <button md-raised-button class="sp-form-button"> Clear</button>
+          <button md-raised-button color="primary" class="sp-form-button">Submit</button>
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+
 </md-sidenav-layout>
 
