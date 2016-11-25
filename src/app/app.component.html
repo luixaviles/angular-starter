@@ -26,8 +26,8 @@
           </div>
         </form>
         <div>
-          <button md-raised-button class="sp-form-button"> Clear</button>
-          <button (click)="addSpeaker(speaker)" md-raised-button color="primary" class="sp-form-button">Submit</button>
+          <button (click)="clearForm()" md-raised-button class="sp-form-button"> Clear</button>
+          <button [disabled]="!speaker.firstName || !speaker.lastName" (click)="addSpeaker(speaker)" md-raised-button color="primary" class="sp-form-button">Submit</button>
         </div>
       </md-card-content>
     </md-card>

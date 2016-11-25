@@ -21,6 +21,10 @@ export class AppComponent implements OnInit {
   addSpeaker(speaker) {
     this.speakers.push(speaker);
     this.initModel();
+
   }
 
+  clearForm() {
+    this.initModel();
+  }
 }
