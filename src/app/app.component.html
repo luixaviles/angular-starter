@@ -27,14 +27,14 @@
         </form>
         <div>
           <button md-raised-button class="sp-form-button"> Clear</button>
-          <button md-raised-button color="primary" class="sp-form-button">Submit</button>
+          <button (click)="addSpeaker(speaker)" md-raised-button color="primary" class="sp-form-button">Submit</button>
         </div>
       </md-card-content>
     </md-card>
   </div>
 
   <div class="sp-container">
-    {{speaker | json}}
+    {{speakers | json}}
   </div>
 
 </md-sidenav-layout>

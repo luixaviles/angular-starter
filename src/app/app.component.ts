@@ -8,6 +8,7 @@ import {Speaker} from './index'
 })
 export class AppComponent implements OnInit {
   speaker: Speaker;
+  speakers: Speaker[] = [];
 
   ngOnInit() {
     this.initModel();
@@ -15,6 +16,11 @@ export class AppComponent implements OnInit {
 
   initModel() {
     this.speaker = new Speaker('', '');
+  }
+
+  addSpeaker(speaker) {
+    this.speakers.push(speaker);
+    this.initModel();
   }
 
 }
