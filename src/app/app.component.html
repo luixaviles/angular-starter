@@ -1,6 +1,15 @@
-<md-toolbar color="primary">
-  <button md-icon-button>
-    <md-icon>menu</md-icon>
-  </button>
-  <span>Angular Starter project</span>
-</md-toolbar>
+<md-sidenav-layout>
+
+  <md-sidenav #sidenav mode="side">
+    Sidenav
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <button md-icon-button (click)="sidenav.toggle()">
+      <md-icon>menu</md-icon>
+    </button>
+    <span>Angular Starter project</span>
+  </md-toolbar>
+
+</md-sidenav-layout>
+
