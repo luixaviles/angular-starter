@@ -33,8 +33,16 @@
     </md-card>
   </div>
 
-  <div class="sp-container">
-    {{speakers | json}}
+  <div class="sp-card-container">
+    <md-card *ngFor="let speaker of speakers" class="sp-card">
+      <md-card-title-group>
+        <img md-card-sm-image src="">
+        <md-card-title>{{speaker.firstName}} {{speaker.lastName}}</md-card-title>
+      </md-card-title-group>
+      <md-card-actions>
+        <button md-button>View Profile</button>
+      </md-card-actions>
+    </md-card>
   </div>
 
 </md-sidenav-layout>
