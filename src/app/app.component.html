@@ -17,8 +17,8 @@
       <md-card-content>
         <form class="sp-form">
           <div>
-            <md-input placeholder="First Name"></md-input>
-            <md-input placeholder="Last Name"></md-input>
+            <md-input [(ngModel)]="speaker.firstName" name="firstName" placeholder="First Name"></md-input>
+            <md-input [(ngModel)]="speaker.lastName" name="lastName" placeholder="Last Name"></md-input>
           </div>
           <div>
             <md-checkbox indeterminate="true">Tech Talk</md-checkbox>
@@ -31,6 +31,10 @@
         </div>
       </md-card-content>
     </md-card>
+  </div>
+
+  <div class="sp-container">
+    {{speaker | json}}
   </div>
 
 </md-sidenav-layout>
