@@ -6,6 +6,14 @@ The application is using also latest version of [Material Components](https://ma
 ## Slides
 Open the slides to [Create An Angular 2 Application From Scratch](https://luixaviles.github.io/angular-starter)
 
+## Live Application
+Go through following URL to find the live application: [https://angular-starter-7073d.firebaseapp.com](https://angular-starter-7073d.firebaseapp.com)
+
+## Screenshots
+![](/screenshots/screen-sample.png?raw=true)
+
+# Running locally
+
 ## Prerequisites
 
 1. [Git](https://git-scm.com/)
