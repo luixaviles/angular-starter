@@ -1,0 +1,818 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Creating an Angular 2 Application from scratch</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+    <!--<link rel="stylesheet" href="css/theme/white.css">-->
+    <!--<link rel="stylesheet" href="css/theme/beige.css">-->
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!--<link rel="stylesheet" href="lib/styles/idea.css">-->
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h2>Creating an Angular 2 Application</h2>
+            <h3>... from Scratch</h3>
+            <p>
+                <img width="180" data-src="assets/gdg-cochabamba.jpg">
+            </p>
+            <p>
+                <small>Luis Aviles / <a href="http://twitter.com/luixaviles">@luixaviles</a></small>
+            </p>
+        </section>
+        <!--<section>-->
+            <!--<h2>About Me</h2>-->
+            <!--<p>Developer</p>-->
+            <!--<p>Another desc</p>-->
+        <!--</section>-->
+
+        <section>
+            <h2>Agenda</h2>
+            <p class="fragment">Create a Project</p>
+            <p class="fragment">Running tests</p>
+            <p class="fragment">Creating a build</p>
+            <p class="fragment">Building an Application</p>
+            <p class="fragment">Material Components</p>
+        </section>
+
+        <section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+            <h2>Create a Project</h2>
+            <p class="fragment">How?</p>
+        </section>
+
+        <section>
+            <h2>Install CLI tool for Angular 2</h2>
+            <pre>
+						<code class="bash" data-trim contenteditable>
+							npm install -g angular-cli@latest
+						</code>
+            </pre>
+        </section>
+
+        <section>
+            <h2>What is angular-cli?</h2>
+            <p class="fragment">Scaffold</p>
+            <p class="fragment">Local build</p>
+            <p class="fragment">Local testing</p>
+            <p class="fragment">Deployment(as an App)</p>
+            <p class="fragment">Deployment(as a component)</p>
+        </section>
+
+        <section>
+            <h2>Create a new project</h2>
+            <pre>
+						<code class="bash" data-trim contenteditable>
+							ng new my-app
+						</code>
+                		<code class="bash" data-trim contenteditable>
+                            cd my-app
+						</code>
+            </pre>
+        </section>
+
+        <section>
+            <h2>Clone an existing project</h2>
+            <pre>
+						<code class="bash" data-trim contenteditable>
+							git clone https://github.com/luixaviles/angular-starter.git
+						</code>
+                		<code class="bash" data-trim contenteditable>
+                            cd angular-starter
+						</code>
+            </pre>
+        </section>
+
+        <section>
+            <p>
+                Base project
+            </p>
+            <pre>
+                <code class="bash" data-trim contenteditable>
+git checkout .
+git checkout 0.0.1
+                </code>
+            </pre>
+        </section>
+
+
+        <section>
+            <h2>Run the project</h2>
+            <pre>
+						<code class="bash" data-trim contenteditable>
+							ng serve
+						</code>
+                		<code class="bash" data-trim contenteditable>
+							ng serve --host 0.0.0.0 --port 4201 --live-reload-port 49153
+						</code>
+            </pre>
+        </section>
+
+        <section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+            <h2>Running tests</h2>
+            <p class="fragment">Unit tests vs E2E tests</p>
+        </section>
+
+        <section>
+            <h2>Unit tests</h2>
+            <pre>
+						<code class="fragment bash" data-trim contenteditable>
+							ng test
+						</code>
+            </pre>
+        </section>
+
+        <section>
+            <h2>E2E tests</h2>
+            <pre>
+                		<code class="fragment bash" data-trim contenteditable>
+							ng e2e
+						</code>
+            </pre>
+        </section>
+
+
+        <section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+            <h2>Creating a build</h2>
+        </section>
+
+        <section>
+            <p>
+                Creates dist/ directory
+            </p>
+            <pre>
+						<code class="fragment bash" data-trim contenteditable>
+							ng build
+						</code>
+                		<code class="fragment bash" data-trim contenteditable>
+							ng build --prod
+						</code>
+            </pre>
+        </section>
+
+        <section>
+            <h2>Running App from your build</h2>
+            <pre>
+						<code class="fragment bash" data-trim contenteditable>
+							npm install -g http-server
+						</code>
+                		<code class="fragment bash" data-trim contenteditable>
+							http-server dist/
+						</code>
+            </pre>
+        </section>
+
+        <section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+            <h2>Building an Application</h2>
+        </section>
+
+        <section>
+            <p>We want to build an App to allow register #DevFest speakers</p>
+            <img class="fragment" width="600" data-src="assets/our-project.png">
+        </section>
+
+        <section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+            <h2>Material Components</h2>
+        </section>
+
+        <section>
+            <p>Installing Angular Material Components </p>
+            <pre>
+						<code class="fragment bash" data-trim contenteditable>
+							npm install --save @angular/material
+						</code>
+            </pre>
+        </section>
+
+        <section>
+            <p>
+                app.module.ts
+            </p>
+            <pre>
+                <code class="typescript" data-trim contenteditable>
+import { MaterialModule } from '@angular/material';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    MaterialModule.forRoot()
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p>
+                index.html
+            </p>
+            <pre>
+                <code class="html" data-trim contenteditable>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p>
+                app.component.html
+            </p>
+            <pre>
+                <code class="html" data-trim contenteditable>
+<md-toolbar color="primary">
+
+</md-toolbar>
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p>
+                app.component.html
+            </p>
+            <pre>
+                <code class="html" data-trim contenteditable>
+<md-toolbar color="primary">
+  <button md-icon-button>
+    <md-icon>menu</md-icon>
+  </button>
+  <span>DevFest Cochabamba</span>
+</md-toolbar>
+                </code>
+            </pre>
+        </section>
+
+        <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+            <h2>Theming</h2>
+        </section>
+
+        <section>
+            <p>
+                styles.css
+            </p>
+            <pre>
+                <code class="css" data-trim contenteditable>
+@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
+                </code>
+            </pre>
+        </section>
+
+        <!-- Nested vertical slides(fix hammerjs issues) -->
+        <section>
+            <section>
+                <h4>Any hammerjs issue?</h4>
+                <p>Take a look the browser's console</p>
+                <code class="bash" data-trim contenteditable>
+                    CTRL + SHIFT + i
+                </code>
+            </section>
+            <section>
+                <p>
+                    Install following package:
+                </p>
+                <pre>
+                <code class="bash" data-trim contenteditable>
+npm install @types/hammerjs --save-dev
+                </code>
+            </pre>
+            </section>
+        </section>
+
+        <section>
+            <p>
+                Installing Angular Material Components
+            </p>
+            <p>
+                (Solution)
+            </p>
+            <pre>
+                <code class="bash" data-trim contenteditable>
+git checkout .
+git checkout 0.0.2
+                </code>
+            </pre>
+        </section>
+
+
+        <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+            <p>Adding Form to register Speakers</p>
+        </section>
+
+        <section>
+            <p>
+                app.component.html
+            </p>
+            <pre>
+                <code class="html" data-trim contenteditable>
+<div>
+    <md-card>
+      <md-card-title>Add a Speaker</md-card-title>
+    </md-card>
+</div>
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p>
+                app.component.html
+            </p>
+            <pre>
+                <code class="html" data-trim contenteditable>
+ <div>
+    <md-card>
+      <md-card-title>Add a Speaker</md-card-title>
+      <md-card-content>
+        <form>
+        </form>
+      </md-card-content>
+    </md-card>
+  </div>
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p>
+                app.component.html
+            </p>
+            <pre>
+                <code class="html" data-trim contenteditable>
+ <div>
+    <md-card>
+      <md-card-title>Add a Speaker</md-card-title>
+      <md-card-content>
+        <form>
+          <div>
+            <md-input placeholder="First Name"></md-input>
+            <md-input placeholder="Last Name"></md-input>
+          </div>
+        </form>
+      </md-card-content>
+    </md-card>
+  </div>
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p>
+                app.component.html
+            </p>
+            <pre>
+                <code class="html" data-trim contenteditable>
+ <div>
+    <md-card>
+      <md-card-title>Add a Speaker</md-card-title>
+      <md-card-content>
+        <form>
+          <div>
+            <md-input placeholder="First Name"></md-input>
+            <md-input placeholder="Last Name"></md-input>
+          </div>
+        </form>
+          <div>
+            <button md-raised-button> Clear</button>
+            <button md-raised-button color="primary">Submit</button>
+          </div>
+      </md-card-content>
+    </md-card>
+  </div>
+                </code>
+            </pre>
+        </section>
+
+        <!--Vertical slides: Fixing CSS issues-->
+        <section>
+
+            <section>
+                <p>You can fix CSS issues...</p>
+            </section>
+
+            <section>
+                <p>
+                    app.component.html
+                </p>
+                <pre>
+                <code class="html" data-trim contenteditable>
+   <div class="sp-container">
+    <md-card>
+      <md-card-title>Add a Speaker</md-card-title>
+      <md-card-content>
+        <form class="sp-form">
+          <div>
+            <md-input placeholder="First Name"></md-input>
+            <md-input placeholder="Last Name"></md-input>
+          </div>
+        </form>
+        <div>
+          <button md-raised-button class="sp-form-button"> Clear</button>
+          <button md-raised-button color="primary" class="sp-form-button">Submit</button>
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+
+                </code>
+            </pre>
+            </section>
+
+            <section>
+                <p>
+                    app.component.css
+                </p>
+                <pre>
+                <code class="css" data-trim contenteditable>
+.sp-container {
+  padding: 20px;
+}
+
+.sp-form {
+  padding: 20px;
+}
+
+.sp-form-button {
+  margin: 10px;
+}
+                </code>
+            </pre>
+            </section>
+
+        </section>
+
+        <section>
+            <p>Adding Form to register Speakers</p>
+            <p>(Solution)</p>
+            <pre>
+                <code class="bash" data-trim contenteditable>
+git checkout .
+git checkout 0.0.4
+                </code>
+            </pre>
+        </section>
+
+        <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+            <p>Adding Speaker model & bindings</p>
+        </section>
+
+        <section>
+            <p>Adding Speaker class</p>
+            <pre>
+						<code class="bash" data-trim contenteditable>
+							ng g class speaker
+						</code>
+            </pre>
+        </section>
+
+
+        <section>
+            <p>
+                speaker.ts
+            </p>
+            <pre>
+                <code class="typescript" data-trim contenteditable>
+export class Speaker {
+  constructor(public firstName: string, public lastName: string) {
+
+  }
+}
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p>
+                index.ts
+            </p>
+            <pre>
+                <code class="typescript" data-trim contenteditable>
+export * from './app.component';
+export * from './app.module';
+export * from './speaker';
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p>
+                app.component.ts
+            </p>
+            <pre>
+                <code class="typescript" data-trim contenteditable>
+import {Component, OnInit} from '@angular/core';
+import {Speaker} from './index'
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent implements OnInit {
+  speaker: Speaker;
+
+  ngOnInit() {
+    this.initModel();
+  }
+
+  initModel() {
+    this.speaker = new Speaker('', '');
+  }
+}
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p>
+                app.component.html
+            </p>
+            <pre>
+                <code class="html" data-trim contenteditable>
+&lt;md-input [(ngModel)]=&#34;speaker.firstName&#34; name=&#34;firstName&#34;&gt;&lt;/md-input&gt;&#10;&lt;md-input [(ngModel)]=&#34;speaker.lastName&#34; name=&#34;lastName&#34;&gt;&lt;/md-input&gt;                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p>
+                app.component.html
+            </p>
+            <pre>
+                <code class="html" data-trim contenteditable>
+<div class="sp-container">
+    {{speaker | json}}
+</div>
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p>Adding Speaker model & bindings</p>
+            <p>(Solution)</p>
+            <pre>
+                <code class="bash" data-trim contenteditable>
+git checkout .
+git checkout 0.0.5
+                </code>
+            </pre>
+        </section>
+
+        <!--0.0.6 tag: "Adding new Speaker to the list"-->
+        <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+            <p>
+                Adding a new Speaker to a list
+            </p>
+        </section>
+
+        <section>
+            <p>
+                app.component.html
+            </p>
+            <pre>
+                <code class="html" data-trim contenteditable>
+ <div>
+     <button md-raised-button class="sp-form-button"> Clear</button>
+     <button (click)="addSpeaker(speaker)" md-raised-button color="primary" class="sp-form-button">Submit</button>
+</div>
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p>
+                app.component.html
+            </p>
+            <pre>
+                <code class="html" data-trim contenteditable>
+<div class="sp-container">
+    {{speakers | json}}
+</div>
+               </code>
+            </pre>
+        </section>
+
+        <section>
+            <p>
+                app.component.ts
+            </p>
+            <pre>
+                <code class="typescript" data-trim contenteditable>
+export class AppComponent implements OnInit {
+  speaker: Speaker;
+  speakers: Speaker[] = [];
+
+  ngOnInit() {
+    this.initModel();
+  }
+
+  initModel() {
+    this.speaker = new Speaker('', '');
+  }
+
+  addSpeaker(speaker) {
+    this.speakers.push(speaker);
+    this.initModel();
+  }
+}                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p>
+                Adding a new Speaker to a list
+            </p>
+            <p>
+                (Solution)
+            </p>
+            <pre>
+                <code class="bash" data-trim contenteditable>
+git checkout .
+git checkout 0.0.6
+                </code>
+            </pre>
+        </section>
+
+        <!--0.0.7 tag: "Adding Speaker cards"-->
+        <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+            <p>
+                Adding Speaker cards
+            </p>
+        </section>
+
+        <section>
+            <p>
+                app.component.html
+            </p>
+            <!--<div class="sp-card-container">-->
+                <!--<md-card *ngFor="let speaker of Speakers" class="sp-card">-->
+                <!--</md-card>-->
+            <!--</div>            -->
+            <pre>
+                <code class="html" data-trim contenteditable>
+<div class="sp-card-container">
+    &lt;md-card *ngFor=&#34;let speaker of Speakers&#34; class=&#34;sp-card&#34;&gt;
+    &lt;/md-card&gt;
+</div>
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p>
+                app.component.html
+            </p>
+            <pre>
+                <code class="html" data-trim contenteditable>
+  <div class="sp-card-container">
+    &lt;md-card *ngFor=&#34;let speaker of speakers&#34; class=&#34;sp-card&#34;&gt;
+      <md-card-title-group>
+        <img md-card-sm-image src="">
+        <md-card-title>{{speaker.firstName}} {{speaker.lastName}}</md-card-title>
+      </md-card-title-group>
+      <md-card-actions>
+        &lt;button md-button&gt;View Profile&lt;/button&gt;
+      </md-card-actions>
+    &lt;/md-card&gt;
+  </div>
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p>
+                app.component.css
+            </p>
+            <pre>
+                <code class="css" data-trim contenteditable>
+.sp-card {
+  width: 400px;
+  box-sizing: border-box;
+  margin: 16px;
+}
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p>
+                Adding Speaker cards
+            </p>
+            <p>
+                (Solution)
+            </p>
+            <pre>
+                <code class="bash" data-trim contenteditable>
+git checkout .
+git checkout 0.0.7
+                </code>
+            </pre>
+        </section>
+
+        <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+            <p>
+                ...And more behavior
+            </p>
+        </section>
+
+        <section>
+            <p>
+                Validations & Events
+            </p>
+            <pre>
+                <code class="bash" data-trim contenteditable>
+git checkout .
+git checkout master
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <h2>References</h2>
+            <pre>
+						<code class="bash" data-trim contenteditable>
+							https://cli.angular.io/
+						</code>
+                		<code class="bash" data-trim contenteditable>
+                            https://material.angular.io/
+						</code>
+            </pre>
+        </section>
+
+        <section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+            <h2>Questions?</h2>
+            <img width="270" data-src="assets/question-mark.png" style="background:none; border:none; box-shadow:#eee8d5;">
+        </section>
+
+        <section>
+            <h2>Thank You!</h2>
+            <div id="left">
+                <a href="https://twitter.com/luixaviles">
+                    <img width="270" data-src="assets/twitter.png" style="background:none; border:none; box-shadow:none;">
+                </a>
+                <div class="twitter-username">
+                    luixaviles
+                </div>
+            </div>
+
+            <div id="right">
+                <a href="https://github.com/luixaviles">
+                    <img width="185" data-src="assets/github-3.png" style="background:none; border:none; box-shadow:none;">
+                </a>
+                <div class="github-username">
+                    luixaviles
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
+</script>
+</body>
+</html>
