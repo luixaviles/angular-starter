@@ -4,7 +4,7 @@ This project shows how you can build your first Angular Application from scratch
 The application is using also latest version of [Material Components](https://material.angular.io/).
 
 ## Slides
-Follow the steps you can find in following [Slides](https://luixaviles.github.io/angular-starter)
+Open the slides to [Create An Angular 2 Application From Scratch](https://luixaviles.github.io/angular-starter)
 
 ## Prerequisites
 
