@@ -30,6 +30,10 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 Before running the tests make sure you are serving the app via `ng serve`.
 (This project needs add/update e2e tests)
 
+## Deployment
+You can easily deploy your Angular Application using [Firebase](https://firebase.google.com/).
+Take a look [Creating And Deploying an Angular 2 Application in 30 Minutes](create-and-deploy-guide/creating-and-deploying-angular-app.pdf)
+
 ## Further help
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
